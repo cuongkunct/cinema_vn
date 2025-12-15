@@ -1,5 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getListCinemaTicket } from "@store/booking/movieBookingApi.js";
+import {
+  getListCinemaTicket,
+  checkoutTicket,
+} from "@store/booking/movieBookingApi.js";
 
 const movieBookingSlice = createSlice({
   name: "movieBooking",
@@ -7,6 +10,11 @@ const movieBookingSlice = createSlice({
     moviesInfor: {},
     listSeats: [],
     selectedSeats: [],
+    loading: false,
+    error: null,
+    checkoutLoading: false,
+    checkoutSuccess: false,
+    checkoutError: null,
   },
 
   reducers: {
@@ -28,6 +36,10 @@ const movieBookingSlice = createSlice({
     clearSeat: (state) => {
       state.selectedSeats = [];
     },
+    resetCheckoutState: (state) => {
+      state.checkoutSuccess = false;
+      state.checkoutError = null;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -43,9 +55,22 @@ const movieBookingSlice = createSlice({
       .addCase(getListCinemaTicket.pending, (state, action) => {
         state.loading = true;
         state.error = null;
+      })
+      .addCase(checkoutTicket.pending, (state) => {
+        state.checkoutLoading = true;
+        state.checkoutSuccess = false;
+      })
+      .addCase(checkoutTicket.fulfilled, (state) => {
+        state.checkoutLoading = false;
+        state.checkoutSuccess = true;
+        state.selectedSeats = [];
+      })
+      .addCase(checkoutTicket.rejected, (state, action) => {
+        state.checkoutLoading = false;
+        state.checkoutError = action.payload.message;
       });
   },
 });
-export const { setMovieDetail, toggleSeat, clearSeat } =
+export const { setMovieDetail, toggleSeat, clearSeat, resetCheckoutState } =
   movieBookingSlice.actions;
 export default movieBookingSlice.reducer;

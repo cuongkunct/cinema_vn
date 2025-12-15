@@ -3,7 +3,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const getListCinemaTicket = createAsyncThunk(
   "QuanLyDatVe/LayDanhSachPhongVe",
-  async ({ token, maLichChieu }, { rejectWithValue }) => {
+  async ({ maLichChieu }, { rejectWithValue }) => {
     try {
       const response = await api.get(
         "QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=" + maLichChieu
