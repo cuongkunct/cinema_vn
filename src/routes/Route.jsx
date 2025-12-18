@@ -3,6 +3,13 @@ import { lazy } from "react";
 import { Suspense } from "react";
 const Auth = lazy(() => import("../layout/AuthLayout.jsx"));
 const UserLayout = lazy(() => import("../layout/UserLayout.jsx"));
+const AdminLayout = lazy(() => import("../layout/AdminLayout.jsx"));
+
+const AdminLogin = lazy(() => import("../pages/admin/auth/LoginAdmin.jsx"));
+const Dashboard = lazy(() => import("../pages/admin/dashboard/Dashboard.jsx"));
+const FilmManage = lazy(() => import("../pages/admin/films/FilmManage.jsx"));
+const AddNew = lazy(() => import("../pages/admin/films/AddNew.jsx"));
+const UserManage = lazy(() => import("../pages/admin/user/UserManagement.jsx"));
 
 const Home = lazy(() => import("../pages/user/Home/Home"));
 const About = lazy(() => import("../pages/user/About/About"));
@@ -38,6 +45,23 @@ const routes = [
       { path: "password/reset", element: <ForgotPassword /> },
     ],
   },
+
+  {
+    path: "admin",
+    element: <AdminLayout />,
+    children: [
+      { path: "dashboard", element: <Dashboard />, index: true },
+      { path: "films", element: <FilmManage /> },
+      { path: "films/add-new", element: <AddNew /> },
+      { path: "users", element: <UserManage /> },
+    ],
+  },
+  {
+    path: "auth/admin",
+    element: <AdminLogin />,
+    children: [{ path: "login", element: <AdminLogin /> }],
+  },
+
   { path: "*", element: <h1>404</h1> },
 ];
 
