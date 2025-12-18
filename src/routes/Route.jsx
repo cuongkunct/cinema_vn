@@ -1,8 +1,8 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { lazy } from "react";
-
-const UserLayout = lazy(() => import("../components/user/layout/UserLayout"));
-const AuthLayout = lazy(() => import("../components/user/layout/AuthLayout"));
+import { Suspense } from "react";
+const Auth = lazy(() => import("../layout/AuthLayout.jsx"));
+const UserLayout = lazy(() => import("../layout/UserLayout.jsx"));
 
 const Home = lazy(() => import("../pages/user/Home/Home"));
 const About = lazy(() => import("../pages/user/About/About"));
@@ -18,58 +18,46 @@ const ForgotPassword = lazy(() => import("../pages/user/Auth/ForgotPassword"));
 const routes = [
   {
     path: "/",
-    element: UserLayout,
+    element: <UserLayout />,
     children: [
-      { path: "", element: Home, index: true },
-      { path: "about", element: About },
-      { path: "movie", element: Movie },
-      { path: "contact", element: Contact },
-      { path: "account/profile", element: Profile },
-      { path: "movies/:id", element: MovieDetails },
-      { path: "movie/booking-details/:id", element: SeatsPage },
+      { index: true, element: <Home /> },
+      { path: "about", element: <About /> },
+      { path: "movie", element: <Movie /> },
+      { path: "contact", element: <Contact /> },
+      { path: "account/profile", element: <Profile /> },
+      { path: "movies/:id", element: <MovieDetails /> },
+      { path: "movie/booking-details/:id", element: <SeatsPage /> },
     ],
   },
   {
-    path: "account",
-    element: AuthLayout,
+    path: "auth",
+    element: <Auth />,
     children: [
-      { path: "login", element: Login },
-      { path: "register", element: Register },
-      { path: "password/reset", element: ForgotPassword },
+      { path: "login", element: <Login /> },
+      { path: "register", element: <Register /> },
+      { path: "password/reset", element: <ForgotPassword /> },
     ],
   },
-  {
-    path: "*",
-    element: <h1>404</h1>,
-  },
+  { path: "*", element: <h1>404</h1> },
 ];
 
 const renderRoutes = () => {
-  return routes.map((route, row) => {
-    const { path, index, element: Element, children } = route;
+  return routes.map((route, i) => {
+    const { path, index, element, children } = route;
 
+    // Route cấp 1
     return (
-      <Route
-        key={row}
-        path={path}
-        index={index}
-        element={Element ? <Element /> : null}
-      >
+      <Route key={i} path={path} index={index} element={element}>
+        {/* Route con cấp 2 */}
         {children &&
-          children.map((child, row) => {
-            const { path, index, element: Element } = child;
+          children.map((child, j) => {
+            const { path, index, element } = child;
             return (
-              <Route
-                key={row}
-                path={path}
-                index={index}
-                element={Element ? <Element /> : null}
-              />
+              <Route key={j} path={path} index={index} element={element} />
             );
           })}
       </Route>
     );
   });
 };
-
 export default renderRoutes;

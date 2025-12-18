@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import api from "@servies/api.js";
+import api from "@services/api.js";
 
 const login = createAsyncThunk(
   "QuanLyNguoiDung/DangNhap",

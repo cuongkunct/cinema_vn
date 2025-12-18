@@ -1,4 +1,4 @@
-import api from "@servies/api.js";
+import api from "@services/api.js";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const getListCinemaTicket = createAsyncThunk(

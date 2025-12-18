@@ -10,13 +10,9 @@ import {
 } from "@store/booking/movieBookingApi.js";
 import { useParams } from "react-router-dom";
 import { useEffect, useMemo, useState, useCallback } from "react";
-import {
-  SeatsSkeleton,
-  MovieInfoSkeleton,
-} from "@components/user/layout/Loader.jsx";
+import { SeatsSkeleton, MovieInfoSkeleton } from "@components/Loader.jsx";
 export default function SeatsPage() {
   const { id } = useParams();
-  const { cyberSoftToken } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const {
     moviesInfor,
@@ -44,12 +40,11 @@ export default function SeatsPage() {
 
   useEffect(() => {
     if (!checkoutSuccess && !checkoutError) return;
-
     setModal({
       open: true,
       type: checkoutSuccess ? "success" : "error",
       message: checkoutSuccess
-        ? "🎉 Đặt vé thành công!"
+        ? "Đặt vé thành công!"
         : checkoutError || "Đặt vé thất bại",
     });
   }, [checkoutSuccess, checkoutError]);

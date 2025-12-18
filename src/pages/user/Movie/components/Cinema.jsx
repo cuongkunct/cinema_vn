@@ -2,10 +2,7 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getShowTimeDetails } from "@store/cinema/cinemaApi.js";
 import { useNavigate } from "react-router-dom";
-import {
-  TheaterSkeleton,
-  MovieSkeleton,
-} from "@components/user/layout/Loader.jsx";
+import { TheaterSkeleton, MovieSkeleton } from "@components/Loader.jsx";
 
 export default function Cinema({ maPhim }) {
   const navigate = useNavigate();

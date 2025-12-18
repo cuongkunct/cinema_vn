@@ -55,17 +55,17 @@ export default function NavigateMenu() {
 
   const handleLogout = () => {
     dispatch(logout());
-    navigate("/account/login");
+    navigate("/auth/login");
   };
   return (
     <>
       <Box
         className={`flex justify-around items-center gap-8  p-1 z-999 fixed w-full 
-        ${scrollY > 50 ? "bg-black/90 backdrop-blur-md" : "bg-transparent"}
+        ${scrollY > 50 ? "bg-gray-800/90 backdrop-blur-md" : "bg-transparent"}
       `}
       >
         <div className="flex justify-center items-center gap-1">
-          <img className="w-14 h-14" src="logo-head.png" alt="logo" />
+          <img className="w-14 h-14" src="/logo-head.png" alt="logo" />
           <p className="font-medium text-2xl text-yellow-200">VIPMovie</p>
         </div>
         <div className="hidden md:flex lg:flex justify-center items-center gap-8">
@@ -103,7 +103,7 @@ export default function NavigateMenu() {
           ) : (
             <>
               <NavLink
-                to="account/login"
+                to="/auth/login"
                 className="flex flex-col items-center gap-1"
               >
                 <p className="text-white bg-[#CDA566] py-1 px-3 rounded-2xl">
@@ -112,7 +112,7 @@ export default function NavigateMenu() {
               </NavLink>
 
               <NavLink
-                to="account/register"
+                to="/auth/register"
                 className="flex flex-col items-center gap-1"
               >
                 <p className="text-white bg-[#CDA566] py-1 px-3 rounded-2xl">
