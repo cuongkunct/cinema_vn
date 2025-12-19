@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import Banner from "@components/Banner.jsx";
+import Banner from "@components/user/Banner";
 import { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import MovieList from "../Movie/components/MovieList.jsx";

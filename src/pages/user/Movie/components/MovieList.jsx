@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getMovies } from "@store/movie/movieApi.js";
-import { MovieCardSkeleton } from "@components/Loader.jsx";
+import { MovieCardSkeleton } from "@components/user/Loader.jsx";
 import MovieCard from "./MovieCard.jsx";
 
 export default function MovieList({ searchKey, filter }) {
