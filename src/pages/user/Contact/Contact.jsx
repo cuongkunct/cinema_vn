@@ -1,7 +1,7 @@
 export default function Contact() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center pt-24">
-      <div className="max-w-3xl w-full bg-gray-800 rounded-2xl shadow-2xl border border-gray-700 p-8">
+    <div className="min-h-screen  text-white flex items-center justify-center pt-24">
+      <div className="max-w-3xl w-full  rounded-2xl shadow-2xl border border-gray-700 p-8">
         <h1 className="text-4xl font-extrabold text-center text-[#CDA566] tracking-widest mb-6">
           CONTACT • SUPPORT
         </h1>

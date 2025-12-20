@@ -61,13 +61,13 @@ export default function Cinema({ maPhim }) {
     <div className={`${maPhim ? "mt-4" : "mt-4 mx-18 "}`}>
       <div
         id="cinema"
-        className="flex flex-wrap   bg-gray-900 items-center justify-around rounded-xl mt-8  gap-4"
+        className="flex flex-wrap  items-center justify-around rounded-xl mt-8 py-2  gap-4"
       >
         {cinemaSystemData?.map((item) => (
           <div
             key={item.maHeThongRap}
             onClick={() => setActiveCinema(item.maHeThongRap)}
-            className={` w-50 h-30 flex flex-col items-center gap-4 p-3  rounded-lg cursor-pointer transition 
+            className={` w-50 h-30 flex flex-col items-center gap-4 p-3 rounded-lg cursor-pointer transition hover:bg-[#CDA566] shadow-md shadow-gray-400 
                       ${
                         activeCinema === item.maHeThongRap
                           ? "bg-[#CDA566]"
@@ -85,8 +85,8 @@ export default function Cinema({ maPhim }) {
           </div>
         ))}
       </div>
-      <div className="flex flex-col md:flex-row lg:flex-row gap-4 mt-4">
-        <div className="sm:w-full md:w-2/6 lg:w-2/6">
+      <div className="flex flex-col md:flex-row lg:flex-row gap-4 ">
+        <div className="sm:w-full md:w-2/6 lg:w-2/6 mt-12 mb-12">
           <h1 className="uppercase text-2xl text-[#CDA566] flex justify-center">
             movie location
           </h1>
@@ -101,7 +101,7 @@ export default function Cinema({ maPhim }) {
                     onClick={() => {
                       setActiveTheater(item.maCumRap);
                     }}
-                    className={`flex items-center gap-4 p-3 border-b border-gray-700 rounded-lg cursor-pointer transition 
+                    className={`flex items-center gap-8 p-3 mt-2 shadow-sm shadow-gray-600 hover:bg-[#CDA566] rounded-lg cursor-pointer transition 
                 ${
                   activeTheater === item.maCumRap
                     ? "bg-[#CDA566]"
@@ -123,13 +123,13 @@ export default function Cinema({ maPhim }) {
                 ))}
           </div>
         </div>
-        <div className="sm:w-full md:w-4/6 lg:w-4/6">
+        <div className="sm:w-full md:w-4/6 lg:w-4/6 mt-12 mb-12">
           {moviesShowTime.length > 0 && (
             <div className="space-y-6">
               <h1 className="uppercase text-2xl text-[#CDA566] flex justify-center">
                 movie showtimes
               </h1>
-              <div className="h-[500px] max-h-[500px] overflow-y-auto pr-2 hide-scrollbar shadow-gray-500 shadow-2xl rounded-2xl">
+              <div className="h-[500px] max-h-[500px] overflow-y-auto pr-2 hide-scrollbar">
                 {loadingShowTime ? (
                   <div className="space-y-4">
                     {[1, 2, 3].map((i) => (
@@ -140,7 +140,7 @@ export default function Cinema({ maPhim }) {
                   moviesShowTime?.map((movie, index) => (
                     <div
                       key={index}
-                      className="bg-gray-900 p-4 rounded-lg shadow-md"
+                      className=" p-4 rounded-lg shadow-sm shadow-gray-600 hover:bg-gray-900 cursor-pointer transition"
                     >
                       {/* Phần info phim */}
                       <div className="flex gap-4">

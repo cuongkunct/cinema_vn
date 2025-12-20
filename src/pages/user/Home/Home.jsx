@@ -2,12 +2,12 @@ import { Outlet } from "react-router-dom";
 import Banner from "@components/user/Banner";
 import { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import MovieList from "../Movie/components/MovieList.jsx";
+import MovieList from "../Movie/_components/MovieList.jsx";
 import { getCinemaSystem } from "@store/cinema/cinemaApi.js";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import Cinema from "../Movie/components/Cinema.jsx";
-import MovieReviewSection from "./components/MovieReviewSection.jsx";
+import Cinema from "../Movie/_components/Cinema.jsx";
+import MovieReviewSection from "./_components/MovieReviewSection.jsx";
 
 export default function Home() {
   const dispatch = useDispatch();

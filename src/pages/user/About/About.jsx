@@ -1,13 +1,13 @@
 export default function About() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white pt-24 flex items-center justify-center">
+    <div className="min-h-screen  text-white pt-24 flex items-center justify-center">
       <div
         className="absolute inset-0 bg-cover bg-center opacity-20"
         style={{
           backgroundImage: "url('banner_movie.webp')",
         }}
       />
-      <div className="relative w-full mx-20 bg-gray-800/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-700 p-10">
+      <div className="relative w-full mx-20 bg-[url('https://www.majorplatinumcineplex.la/assets/images/background-top.png')] bg-cover bg-no-repeat bg-center backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-700 p-10">
         <h1 className="text-4xl font-extrabold text-center text-[#CDA566] tracking-widest mb-10">
           ABOUT • VIPMovie
         </h1>

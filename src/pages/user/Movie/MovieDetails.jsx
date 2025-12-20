@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { getMovieDetail } from "@store/movie/movieApi.js";
-import Cinema from "../Movie/components/Cinema.jsx";
+import Cinema from "../Movie/_components/Cinema.jsx";
 
 export default function MovieDetails() {
   const dispatch = useDispatch();

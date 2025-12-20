@@ -1,11 +1,12 @@
-import HeaderSile from "./components/HeaderSile.jsx";
+import HeaderSile from "./_components/HeaderSile.jsx";
 import { useSelector } from "react-redux";
-import MovieCard from "./components/MovieCard.jsx";
+import MovieCard from "./_components/MovieCard.jsx";
+
 export default function Movie() {
   const { movieData, loading, error } = useSelector((state) => state.movie);
   const hotMovies = movieData.filter((item) => item.hot === true).slice(0, 10);
   return (
-    <div className="bg-gray-900 min-h-screen text-white pt-24">
+    <div className=" min-h-screen text-white pt-24">
       <HeaderSile hotMovies={hotMovies} />
       <div>
         <h1 className="text-4xl font-bold text-center text-[#CDA566] tracking-widest mb-5 mt-24">

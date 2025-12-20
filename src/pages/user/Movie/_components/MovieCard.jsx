@@ -7,14 +7,13 @@ function MovieCard({ movie }) {
   const [open, setOpen] = useState(false);
 
   return (
-    // Card
     <>
-      <div className="relative group rounded-sm overflow-hidden shadow-lg bg-gray-900">
+      <div className="relative rounded-sm overflow-hidden">
         <img
           src={movie.hinhAnh}
-          className="w-full h-64 object-cover group-hover:opacity-60 transition-all duration-300"
+          className="w-full h-100 object-cover hover:opacity-60 transition-all duration-300 shadow-xl shadow-gray-900"
         />
-        {/* Title */}
+
         <div className="flex flex-row gap-2 p-1">
           <CalendarMonthIcon className="!w-6 !h-6 text-white" />
           <div className="p-1 text-white text-sm">
@@ -24,14 +23,11 @@ function MovieCard({ movie }) {
 
         <div className="p-2 text-white text-lg">{movie.tenPhim}</div>
 
-        {/* Hover overlay + button */}
         <div
           className="
     absolute inset-0 bg-black/50 bg-opacity-70 
-    flex flex-col 
-    pb-20
-    opacity-0 group-hover:opacity-100 
-    transition-all duration-300
+    flex flex-col justify-center items-center gap-4
+    opacity-0 hover:opacity-100 transition-all duration-300
   "
         >
           <div className="flex justify-start p-2">
@@ -56,17 +52,6 @@ function MovieCard({ movie }) {
         "
             >
               More Info
-            </button>
-            <button
-              onClick={() => navigate(`/movies/${movie.maPhim}`)} // link đến movie details
-              className="
-            px-8 py-1
-            bg-[#CDA566] hover:bg-[#957849] 
-            text-white font-semibold 
-            shadow-lg cursor-pointer
-        "
-            >
-              Buy Now
             </button>
           </div>
         </div>

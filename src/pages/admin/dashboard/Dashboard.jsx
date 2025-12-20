@@ -16,7 +16,6 @@ export default function Dashboard() {
     revenue: 1350000000,
   };
 
-  // 🔥 DỮ LIỆU GIẢ - DOANH THU THEO NGÀY
   const revenueData = [
     { day: "T2", revenue: 120 },
     { day: "T3", revenue: 180 },
@@ -57,7 +56,6 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* ==== CHART NỬA DƯỚI ==== */}
       <div className="mt-10 bg-white rounded-xl shadow p-6">
         <h2 className="text-lg font-semibold mb-4">
           📈 Doanh thu theo ngày (triệu VNĐ)

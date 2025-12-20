@@ -61,7 +61,11 @@ export default function NavigateMenu() {
     <>
       <Box
         className={`flex justify-around items-center gap-8  p-1 z-999 fixed w-full 
-        ${scrollY > 50 ? "bg-gray-800/90 backdrop-blur-md" : "bg-transparent"}
+        ${
+          scrollY > 50
+            ? "bg-[url('header_bg_left.png')] bg-cover bg-no-repeat bg-center"
+            : "bg-transparent"
+        }
       `}
       >
         <div className="flex justify-center items-center gap-1">

@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 pt-10 pb-6 px-6 ">
+    <footer className=" text-gray-300 pt-10 pb-6 px-6 bg-[url('footer_bg.png')] bg-cover bg-no-repeat bg-center ">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
           <h4 className="text-white font-bold mb-3 text-lg">CGV Ticket</h4>

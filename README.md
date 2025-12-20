@@ -12,11 +12,12 @@ Text: white
 3. Form
    npm install formik yup
 
+4. Styled-Component
+
+Link Admin: http://localhost:5173/auth/admin/login
 git init
 git add README.md
 git commit -m "Setup source code / Define navbar"
 git branch -M main
 git remote add origin https://github.com/cuongkunct/cinema-booking.git
 git push -u origin main
-
-  
