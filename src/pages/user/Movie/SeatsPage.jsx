@@ -10,7 +10,7 @@ import {
 } from "@store/booking/movieBookingApi.js";
 import { useParams } from "react-router-dom";
 import { useEffect, useMemo, useState, useCallback } from "react";
-import { SeatsSkeleton, MovieInfoSkeleton } from "@components/Loader.jsx";
+import { SeatsSkeleton, MovieInfoSkeleton } from "@components/user/Loader.jsx";
 export default function SeatsPage() {
   const { id } = useParams();
   const dispatch = useDispatch();
