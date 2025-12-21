@@ -1,7 +1,7 @@
 import { Tabs, Tab, Box } from "@mui/material";
 import { Link, Navigate, Outlet, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../store/admin/auth/authAdminSlice.js";
+import { logoutAdmin } from "../store/admin/auth/authAdminSlice.js";
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -30,7 +30,7 @@ export default function AdminLayout() {
   };
 
   const handleLogout = () => {
-    dispatch(logout());
+    dispatch(logoutAdmin());
     navigate("/auth/admin/login");
   };
 

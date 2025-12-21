@@ -2,16 +2,22 @@ import React from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useFormik } from "formik";
+import { useEffect } from "react";
 import * as yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import { adminLogin } from "@store/admin/auth/authAdminApi.js";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate, Link } from "react-router-dom";
 
 export default function LoginAdmin() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { userAdmin, loading, error } = useSelector((state) => state.authAdmin);
-  if (userAdmin) return navigate("/admin/dashboard");
+
+  useEffect(() => {
+    if (userAdmin) {
+      navigate("/admin/dashboard");
+    }
+  }, [userAdmin]);
   const loginForm = useFormik({
     initialValues: {
       taiKhoan: "",

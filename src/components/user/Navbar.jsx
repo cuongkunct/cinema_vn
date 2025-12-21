@@ -181,7 +181,7 @@ export default function NavigateMenu() {
             </MenuItem>
             <MenuItem
               onClick={() => {
-                handleLogout;
+                handleLogout();
                 handleClose;
               }}
             >

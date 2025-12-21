@@ -9,7 +9,7 @@ const adminSlice = createSlice({
     error: null,
   },
   reducers: {
-    logout: (state) => {
+    logoutAdmin: (state) => {
       state.userAdmin = null;
       localStorage.removeItem("userAdmin");
     },
@@ -31,5 +31,5 @@ const adminSlice = createSlice({
       });
   },
 });
-export const { logout } = adminSlice.actions;
+export const { logoutAdmin } = adminSlice.actions;
 export default adminSlice.reducer;
