@@ -168,16 +168,21 @@ export default function NavigateMenu() {
             </MenuItem>
             <Divider />
 
-            <MenuItem onClick={handleClose}>
+            <MenuItem
+              onClick={() => {
+                navigate("/auth/admin/login");
+                handleClose;
+              }}
+            >
               <ListItemIcon>
                 <Settings fontSize="small" />
               </ListItemIcon>
-              Settings
+              Admin
             </MenuItem>
             <MenuItem
               onClick={() => {
-                handleLogout();
-                handleClose();
+                handleLogout;
+                handleClose;
               }}
             >
               <ListItemIcon>

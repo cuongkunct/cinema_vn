@@ -11,6 +11,7 @@ export default function LoginAdmin() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { userAdmin, loading, error } = useSelector((state) => state.authAdmin);
+  if (userAdmin) return navigate("/admin/dashboard");
   const loginForm = useFormik({
     initialValues: {
       taiKhoan: "",

@@ -4,7 +4,7 @@ export default function Profile() {
   const { userInfo } = useSelector((state) => state.auth);
 
   return (
-    <div className="min-h-screen bg-gray-800 p-6 pt-24">
+    <div className="min-h-screen  p-6 pt-24 ">
       {userInfo ? (
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Profile */}

@@ -19,14 +19,14 @@ export default function AdminLayout() {
     return [
       { label: "Dashboard", to: "/admin/dashboard" },
       { label: "Users", to: "/admin/users" },
-      { label: "Films", to: "/admin/films" },
       { label: "Add New", to: "/admin/films/add-new" },
+      { label: "Films", to: "/admin/films" },
     ];
   }, []);
 
   const getCurrentTab = () => {
     const index = tabs.findIndex((tab) => location.pathname.startsWith(tab.to));
-    return index === -1 ? 0 : index;
+    return index;
   };
 
   const handleLogout = () => {
@@ -44,13 +44,19 @@ export default function AdminLayout() {
         <p className="font-medium text-2xl text-yellow-200">Admin</p>
       </div>
 
-      <Box sx={{ display: "flex", height: "100vh" }}>
+      <Box
+        sx={{
+          display: "flex",
+          height: "screen",
+          background: "white",
+          boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.25)",
+        }}
+      >
         <Tabs
           orientation="vertical"
           value={getCurrentTab()}
           sx={{
-            boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.25)",
-
+            boxShadow: "4px 0 20px rgba(0, 0, 0, 0.25)",
             minWidth: 220,
 
             "& .MuiTab-root": {

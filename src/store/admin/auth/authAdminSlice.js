@@ -4,7 +4,7 @@ import { adminLogin } from "@store/admin/auth/authAdminApi.js";
 const adminSlice = createSlice({
   name: "adminAuth",
   initialState: {
-    userAdmin: null,
+    userAdmin: JSON.parse(localStorage.getItem("userAdmin")) || null,
     loading: false,
     error: null,
   },

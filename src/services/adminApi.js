@@ -1,12 +1,11 @@
 import axios from "axios";
 
-const api = axios.create({
+const adminApi = axios.create({
   baseURL: "https://movienew.cybersoft.edu.vn/api/",
 });
 
-api.interceptors.request.use((config) => {
-  console.log("config, ", config);
-  const user = localStorage.getItem("user");
+adminApi.interceptors.request.use((config) => {
+  const user = localStorage.getItem("userAdmin");
   const accessToken = user ? JSON.parse(user)?.content.accessToken : "";
   config.headers = {
     ...config.headers,
@@ -17,4 +16,4 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-export default api;
+export default adminApi;

@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import api from "@services/api.js";
 
 const login = createAsyncThunk(
-  "QuanLyNguoiDung/DangNhap",
+  "fetchLoginUser",
   async (userData, { rejectWithValue }) => {
     try {
       const response = await api.post("QuanLyNguoiDung/DangNhap", userData);

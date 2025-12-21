@@ -26,6 +26,7 @@ export default function Login() {
       console.log(values);
       try {
         const result = await dispatch(login(values)).unwrap();
+        console.log("result", result);
         if (result.statusCode === 200) {
           navigate("/"); // Chuyển tới profile ở đây
         } else {

@@ -1,11 +1,14 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import api from "@services/api.js";
+import adminApi from "@services/adminApi.js";
 
 const adminLogin = createAsyncThunk(
-  "QuanLyNguoiDung/DangNhap",
+  "fetchLoginAdmin",
   async (adminData, { rejectWithValue }) => {
     try {
-      const response = await api.post("QuanLyNguoiDung/DangNhap", adminData);
+      const response = await adminApi.post(
+        "QuanLyNguoiDung/DangNhap",
+        adminData
+      );
       const data = response.data.content;
       if (data?.maLoaiNguoiDung !== "QuanTri")
         return rejectWithValue({

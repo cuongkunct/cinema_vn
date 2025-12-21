@@ -4,7 +4,7 @@ import { login, register, getUserDetails } from "@store/user/userApi.js";
 const userSlice = createSlice({
   name: "auth",
   initialState: {
-    user: null,
+    user: null || JSON.parse(localStorage.getItem("user")),
     userInfo: null,
     loading: false,
     error: null,
