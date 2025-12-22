@@ -1,4 +1,4 @@
-import api from "@services/adminApi.js";
+import adminApi from "@services/adminApi.js";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const fetchListMovieAdmin = createAsyncThunk(

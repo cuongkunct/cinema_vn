@@ -47,7 +47,7 @@ export default function AdminLayout() {
       <Box
         sx={{
           display: "flex",
-          height: "screen",
+          height: "100vh",
           background: "white",
           boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.25)",
         }}
