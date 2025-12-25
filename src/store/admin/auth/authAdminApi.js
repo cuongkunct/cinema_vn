@@ -12,14 +12,11 @@ const adminLogin = createAsyncThunk(
       const data = response.data.content;
       if (data?.maLoaiNguoiDung !== "QuanTri")
         return rejectWithValue({
-          response: {
-            data: {
-              content: "Bạn không có quyền truy cập vào trang này",
-            },
-          },
+          content: "Bạn không có quyền truy cập vào trang này",
         });
       return response.data;
     } catch (err) {
+      console.log("err.response.data", err.response.data);
       return rejectWithValue(err.response.data);
     }
   }

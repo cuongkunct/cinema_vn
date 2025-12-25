@@ -13,6 +13,7 @@ export default function LoginAdmin() {
   const navigate = useNavigate();
   const { userAdmin, loading, error } = useSelector((state) => state.authAdmin);
 
+  console.log(" error UI", error);
   useEffect(() => {
     if (userAdmin) {
       navigate("/admin/dashboard");
@@ -28,11 +29,11 @@ export default function LoginAdmin() {
       matKhau: yup.string().required("Password is required"),
     }),
     onSubmit: async (values) => {
-      const result = await dispatch(adminLogin(values)).unwrap();
-      console.log("result", result);
-      if (result) {
-        navigate("/admin/dashboard"); // Chuyển tới profile ở đây
-      }
+      dispatch(adminLogin(values)).unwrap();
+      // console.log("result", result);
+      // if (result) {
+      //   navigate("/admin/dashboard"); // Chuyển tới profile ở đây
+      // }
     },
   });
 
@@ -72,7 +73,7 @@ export default function LoginAdmin() {
               className="p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft text-red-600"
               role="alert"
             >
-              {error.response.data.content}
+              {error.content}
             </div>
           )}
           <Button type="submit" variant="contained" color="success">

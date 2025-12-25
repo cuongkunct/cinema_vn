@@ -19,6 +19,7 @@ const adminSlice = createSlice({
       .addCase(adminLogin.fulfilled, (state, action) => {
         state.loading = false;
         state.userAdmin = action.payload;
+        console.log(action.payload);
         localStorage.setItem("userAdmin", JSON.stringify(action.payload));
       })
       .addCase(adminLogin.rejected, (state, action) => {
